@@ -5,9 +5,9 @@
 </script>
 
 <div class="homepage__container">
-  <!--    <Title/>-->
-  <!--    <LaunchExperienceBtn/>-->
-  <!--    <IntroCredits/>-->
+    <!-- <Title/>
+    <LaunchExperienceBtn/>
+    <IntroCredits/> -->
   <img
     src="/static/images/intro-description.svg"
     alt="L'art est plus que technique c'est un héritage à préserver"
