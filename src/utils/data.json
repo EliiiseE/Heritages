@@ -94,8 +94,16 @@
       "url": "../static/images/jpeg/Portrait_Final.jpeg",
       "dialogs": [
         {
+          "character": "second",
+          "message": "Regardez notre œuvre, père, n’en n’être-vous pas fier ?"
+        },
+        {
           "character": "main",
-          "message": "Ne sois pas si septique, je vais te montrer que l’on peut allier nos deux styles !"
+          "message": "Je dois t’avouer, fils, que c’est plutôt réussi ! "
+        },
+        {
+          "character": "second",
+          "message": "Vous voyez ! Vous avez votre vision et j’ai la mienne mais rien ne nous empêche de digresser les règles. Le changement c’est parfois être surpris par ce que l’on imaginait impossible. "
         }
       ]
     }
