@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Iowan Old Style";
+    src: url("fonts/2131-font.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "SnellRoundHand";
+    src: url("fonts/SnellBT-Bold.otf") format("opentype");
+    weight: 700;
+  }
+
+  @font-face {
+    font-family: "SnellRoundHand";
+    src: url("fonts/SnellBT-Regular.otf") format("opentype");
+    weight: 400;
+  }
+
+  @font-face {
+    font-family: "SnellRoundHand";
+    src: url("fonts/SnellRoundhand-BlackScript.otf") format("opentype");
+    weight: 900;
+  }
+  @font-face {
+    font-family: "SnellRoundHand";
+    src: url("fonts/SnellRoundhand-BoldScript.otf") format("opentype");
+    weight: 800;
+  }

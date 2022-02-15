@@ -1,0 +1,103 @@
+{
+  "parts": [
+    {
+      "url": "../static/images/jpeg/Fond_Nature.jpeg",
+      "dialogs": [
+        {
+          "character": "main",
+          "message": "Loïs, il est temps de t’apprendre notre tradition familiale qui perdure depuis des années. C’est un devoir que chaque génération se doit d’accomplir."
+        },
+        {
+          "character": "second",
+          "message": "Père, je ne comprends pas qu’entendez-vous par tradition familiale ?"
+        },
+        {
+          "character": "main",
+          "message": "Eh bien, de génération en génération, chaque père offre une oeuvre qu’il a confectionné pour son fils. "
+        }
+      ]
+    },
+    {
+      "url": "../static/images/jpeg/Portrait_Arriere_GP.jpeg",
+      "dialogs": [
+        {
+          "character": "main",
+          "message": "Ton arrière grand-père et ton grand-père s’y sont pliés et tu devras faire de même."
+        }
+      ]
+    },
+    {
+      "url": "../static/images/jpeg/Portrait_GP.jpeg",
+      "dialogs": [
+        {
+          "character": "main",
+          "message": "C’est un symbole de reconnaissance et une manière de te transmettre tout mon savoir pour que tu puisses faire de même quand tu seras père."
+        },
+        {
+          "character": "second",
+          "message": "Très bien père, je vous écoute attentivement par quoi dois-je commencer ?"
+        },
+        {
+          "character": "main",
+          "message": "Il n’y a pas d’art si tu choisis d’idéaliser la réalité. Tu dois absolument la représenter de manière objective, telle que nous la connaissons."
+        }
+      ]
+    },
+    {
+      "url": "../static/images/jpeg/Portrait_Pere.jpeg",
+      "dialogs": [
+        {
+          "character": "main",
+          "message": "Mon fils, voici l’oeuvre que je t’ai peinte, tu remarqueras que j’ai choisi de représenter l’authenticité de la façon la plus franche possible, sans idéaliser et sans appliquer de règles de théorie formelle."
+        },
+        {
+          "character": "main",
+          "message": "Maintenant à ton tour, garde toujours ton objectif en tête, c’est de cette manière que tu arriveras à tes fins."
+        }
+      ]
+    },
+    {
+      "url": "../static/images/jpeg/Portrait_Fils_2.jpeg",
+      "dialogs": [
+        {
+          "character": "main",
+          "message": "Pour moi, la peinture c’est représenter des émotions, laisser exprimer ce que l’on a envie d’extérioriser. Je vous laisse découvrir ce que j’ai peint père, j’espère que vous serez surpris par mon audace et ... "
+        },
+        {
+          "character": "main",
+          "message": "Mais quelle honte ! Cela n’est pas de l’art ! Je t’ai appris, montré, et transmis toute mes connaissances et mon savoir-faire... et tu me proposes une grossièreté pareille ! Rien ne convient, les proportions ne sont pas respectées, tout est géométrique ! "
+        },
+        {
+          "character": "main",
+          "message": "Père, calmez-vous, mon oeuvre reflète seulement ma propre réalité, c’est de cette manière que je perçois l’art. Je ne voulais en aucun cas vous offenser, ni remettre en cause l’éducation que vous m’avez enseignée. "
+        }
+      ]
+    },
+    {
+      "url": "../static/images/jpeg/Background-fusion-art.jpg",
+      "dialogs": [
+        {
+          "character": "main",
+          "message": "Ecoutez, père. Vous avez votre vision et j’ai la mienne. Je pense que nous devrions trouver d’entente ensemble non ?"
+        },
+        {
+          "character": "main",
+          "message": "Ceci me semble compliqué mais je t’avoue fils que tu m’impressionnes alors, pourquoi pas faire ce dernier tableau ensemble liant les traits réalistes d’un portait et ajoutant ta touche de créativité saugrenue. "
+        },
+        {
+          "character": "main",
+          "message": "Ne sois pas si septique, je vais te montrer que l’on peut allier nos deux styles !"
+        }
+      ]
+    },
+    {
+      "url": "../static/images/jpeg/Portrait_Final.jpeg",
+      "dialogs": [
+        {
+          "character": "main",
+          "message": "Ne sois pas si septique, je vais te montrer que l’on peut allier nos deux styles !"
+        }
+      ]
+    }
+  ]
+}
