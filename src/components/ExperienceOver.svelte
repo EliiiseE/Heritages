@@ -47,7 +47,7 @@
     position:relative;
     &__grateful{
       position: absolute;
-      bottom: 90px;
+      bottom: 95px;
       left: 0;
       font-family:$interaction-font;
       font-size: 6.4rem;
