@@ -1,9 +1,9 @@
 <script>
 </script>
 
-<main>
+<div>
   <p>Dot</p>
-</main>
+</div>
 
 <style lang="scss">
 </style>

@@ -1,25 +1,28 @@
 <script>
-  // import data from "../utils/data.json"
-  import Vue from '../components/Vue.svelte';
-  import HomePage from '../components/Homepage/HomePage.svelte';
-  import ExperienceOver from '../components/ExperienceOver.svelte';
+  import Title from '../components/Title.svelte';
+  import Button from '../components/Button.svelte';
+  import IntroCredits from '../components/IntroCredits.svelte';
+
+  import { navigate } from 'svelte-routing';
+
+  const handleClick = () => {
+    navigate('/instruction');
+  };
 </script>
 
-<main>
-  <!-- <HomePage /> -->
-  <Vue />
-  <ExperienceOver />
-</main>
+<div class="homepage__container">
+  <Title />
+  <Button onClick={handleClick} text="Lancer l'expérience" />
+  <IntroCredits />
+</div>
 
 <style lang="scss">
-  @import '../var';
-
-  p {
-    font-family: $interaction-font;
-    color: $primary-color;
-  }
-
-  main {
+  .homepage__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px 24px 10px;
     height: 100%;
+    background: url('/static/texture/texture-1.jpg');
   }
 </style>

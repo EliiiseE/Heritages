@@ -19,6 +19,7 @@
     },
     {
       "url": "../static/images/jpeg/Portrait_Arriere_GP.jpeg",
+      "date": 1802,
       "dialogs": [
         {
           "character": "main",
@@ -28,6 +29,7 @@
     },
     {
       "url": "../static/images/jpeg/Portrait_GP.jpeg",
+      "date": 1875,
       "dialogs": [
         {
           "character": "main",

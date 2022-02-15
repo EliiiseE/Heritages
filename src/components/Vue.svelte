@@ -1,6 +1,7 @@
 <script>
   import data from '../utils/data.json';
   import { characterNames } from '../../store';
+  import { navigate } from 'svelte-routing';
 
   let actualPartIndex = 0;
   let actualDialogIndex = 0;
@@ -12,7 +13,7 @@
 
   const updateImage = () => {
     actualImage = data.parts[actualPartIndex].url;
-  }
+  };
 
   const updateDialog = () => {
     actualData = data.parts[actualPartIndex];
@@ -30,16 +31,61 @@
     }
   };
 
-  const handleClick = () => {
+  const checkFirstDialog = () => {
+    if (actualDialogIndex === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const checkClickPosition = (position) => {
+    if (position >= window.innerWidth / 2) {
+      return true;
+    }
+    return false;
+  };
+
+  const next = () => {
     const isLastDialog = checkLastDialog();
 
     if (isLastDialog) {
-      actualPartIndex += 1;
-      actualDialogIndex = 0;
+      if (actualPartIndex !== data.parts.length - 1) {
+        actualPartIndex += 1;
+        actualDialogIndex = 0;
 
-      updateImage()
+        updateImage();
+      } else {
+        navigate('/credit');
+      }
     } else {
       actualDialogIndex += 1;
+    }
+  };
+
+  const previous = () => {
+    const isFirstDialog = checkFirstDialog();
+
+    if (isFirstDialog) {
+      if (actualPartIndex !== 0) {
+        actualPartIndex -= 1;
+        actualDialogIndex = data.parts[actualPartIndex].dialogs.length - 1;
+
+        updateImage();
+      }
+    } else {
+      actualDialogIndex -= 1;
+    }
+  };
+
+  const handleClick = (e) => {
+    const cursorPosititonX = e.clientX;
+    const isClickRight = checkClickPosition(cursorPosititonX);
+
+    if (isClickRight) {
+      next();
+    } else {
+      previous();
     }
 
     updateDialog();
@@ -47,18 +93,17 @@
 
   const init = () => {
     updateDialog();
-    updateImage()
+    updateImage();
   };
 
   init();
 </script>
 
-<main on:click={handleClick}>
+<div on:click={handleClick} class="container">
+  {#if actualData.date}
+    <p class="date">{actualData.date}</p>
+  {/if}
   <div class="textArea__container" style={`background-image: url(${actualImage});`}>
-    <div class="scroll">
-      <p>Scroll pour continuer</p>
-      <img src="../static/images/arrow-b.svg" alt="" />
-    </div>
     <div class={`textArea ${actualCharacter === characterNames.second ? 'right' : ''}`}>
       <h4>{actualCharacter}</h4>
       <div class="textArea__dialogs">
@@ -70,10 +115,26 @@
       </div>
     </div>
   </div>
-</main>
+</div>
 
 <style lang="scss">
   @import '../var';
+
+  .container {
+    position: relative;
+
+    .date {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      font-family: $title-font;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 6rem;
+      z-index: 2;
+      opacity: 0.3;
+    }
+  }
 
   .textArea__container {
     background-size: cover;
@@ -93,21 +154,6 @@
       background: #000;
       opacity: 0.4;
       z-index: -1;
-    }
-
-    .scroll {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      p {
-        font-family: $interaction-font;
-        font-size: 1.6rem;
-        font-weight: 700;
-        text-align: center;
-        margin: 0;
-        padding: 2rem 0 0 0;
-      }
     }
 
     .textArea {
@@ -154,8 +200,9 @@
             margin-left: 2rem;
           }
 
-          .left-quote, .right-quote {
-            position: absolute;          
+          .left-quote,
+          .right-quote {
+            position: absolute;
             font-family: $interaction-font;
             font-size: 6.4rem;
             margin: 0;

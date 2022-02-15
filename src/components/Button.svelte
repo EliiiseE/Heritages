@@ -1,10 +1,14 @@
 <script>
+  export let onClick;
+  export let text;
 </script>
 
-<button class="homepage__btn-start font-italic font-bold" type="button">Lancer l'expérience</button>
+<button class="homepage__btn-start font-italic font-bold" type="button" on:click={onClick}
+  >{text}</button
+>
 
 <style lang="scss">
-  @import '../../var';
+  @import '../var';
 
   .homepage__btn-start {
     display: block;
@@ -29,12 +33,10 @@
     }
 
     @media all and (max-height: 670px) {
-      .homepage__btn-start {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 </style>

@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <div class="homepage__intro-credits">
   <h2 class="homepage__experience-description font-uppercase font-normal">
     Narration<br />intéractive
@@ -11,7 +8,7 @@
 </div>
 
 <style lang="scss">
-  @import '../../var';
+  @import '../var';
 
   .homepage {
     &__intro-credits {

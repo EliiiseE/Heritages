@@ -6,7 +6,7 @@
 </div>
 
 <style lang="scss">
-  @import '../../var';
+  @import '../var';
 
   .homepage__title {
     position: relative;

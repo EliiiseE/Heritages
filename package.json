@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear",
+    "dev": "HOST=0.0.0.0 rollup -c -w",
+    "start": "sirv public -s",
     "fix": "npx eslint --fix \"{,!(node_modules|public)/**/}*.{js,svelte}\"",
     "format": "npx prettier --write \"{,!(node_modules|public)/**/}*.{js,svelte}\""
   },
