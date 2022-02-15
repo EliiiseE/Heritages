@@ -2,11 +2,13 @@
   // import data from "../utils/data.json"
   import Vue from '../components/Vue.svelte';
   import HomePage from '../components/Homepage/HomePage.svelte';
+  import ExperienceOver from '../components/ExperienceOver.svelte';
 </script>
 
 <main>
-  <HomePage />
+  <!-- <HomePage /> -->
   <Vue />
+  <ExperienceOver />
 </main>
 
 <style lang="scss">
