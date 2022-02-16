@@ -22,11 +22,8 @@
     actualData = data.parts[actualPartIndex];
     nextImage = data.parts[actualPartIndex+1].url;
     
-    // let img = createElement('img');
-    // img.src = nextImage
-    // img.load();
-
-    // console.log(nextImage)
+    let img = document.createElement('img');
+    img.src = nextImage
 
     const dialog = actualData.dialogs[actualDialogIndex];
     actualCharacter = characterNames[dialog.character];
