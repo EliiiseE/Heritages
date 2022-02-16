@@ -5,7 +5,7 @@
       "dialogs": [
         {
           "character": "main",
-          "message": "Loïs, il est temps de t’apprendre notre tradition familiale qui perdure depuis des années. C’est un devoir que chaque génération se doit d’accomplir."
+          "message": "Loïs, il est temps de te transmettre notre tradition familiale qui perdure depuis des années. C’est un devoir que chaque génération se doit d’accomplir."
         },
         {
           "character": "second",
@@ -13,7 +13,7 @@
         },
         {
           "character": "main",
-          "message": "Eh bien, de génération en génération, chaque père offre une oeuvre qu’il a confectionné pour son fils. "
+          "message": "De génération en génération, chaque père offre une œuvre qu’il a réalisé pour son fils. "
         }
       ]
     },
@@ -37,11 +37,11 @@
         },
         {
           "character": "second",
-          "message": "Très bien père, je vous écoute attentivement par quoi dois-je commencer ?"
+          "message": "Très bien père, je vous écoute attentivement, par quoi dois-je commencer ?"
         },
         {
           "character": "main",
-          "message": "Il n’y a pas d’art si tu choisis d’idéaliser la réalité. Tu dois absolument la représenter de manière objective, telle que nous la connaissons."
+          "message": "Il n’y a pas d’art si tu choisis d’idéaliser la réalité. Tu dois absolument la représenter de manière objective, telle que nous la voyons. "
         }
       ]
     },
@@ -50,7 +50,7 @@
       "dialogs": [
         {
           "character": "main",
-          "message": "Mon fils, voici l’oeuvre que je t’ai peinte, tu remarqueras que j’ai choisi de représenter l’authenticité de la façon la plus franche possible, sans idéaliser et sans appliquer de règles de théorie formelle."
+          "message": "Mon fils, voici l'œuvre que je t’ai peinte, tu remarqueras que j’ai choisi de représenter la réalité de la façon la plus franche possible et sans idéaliser le sujet."
         },
         {
           "character": "main",
@@ -62,16 +62,16 @@
       "url": "../static/images/jpeg/Portrait_Fils_2.jpeg",
       "dialogs": [
         {
-          "character": "main",
-          "message": "Pour moi, la peinture c’est représenter des émotions, laisser exprimer ce que l’on a envie d’extérioriser. Je vous laisse découvrir ce que j’ai peint père, j’espère que vous serez surpris par mon audace et ... "
+          "character": "second",
+          "message": "Pour moi, la peinture c’est représenter des émotions, laisser exprimer ce que l’on a envie d’extérioriser. Je vous laisse découvrir ce que j’ai peint père, j’espère que vous serez surpris par mon audace et … "
         },
         {
           "character": "main",
-          "message": "Mais quelle honte ! Cela n’est pas de l’art ! Je t’ai appris, montré, et transmis toute mes connaissances et mon savoir-faire... et tu me proposes une grossièreté pareille ! Rien ne convient, les proportions ne sont pas respectées, tout est géométrique ! "
+          "message": "Mais quelle honte ! Ce n’est pas de l’art ! Je t’ai appris et transmis toutes mes connaissances et mon savoir-faire... et tu me proposes une grossièreté pareille ! Rien ne me convient, tout est géométrique et les proportions ne sont même pas respectées ! "
         },
         {
-          "character": "main",
-          "message": "Père, calmez-vous, mon oeuvre reflète seulement ma propre réalité, c’est de cette manière que je perçois l’art. Je ne voulais en aucun cas vous offenser, ni remettre en cause l’éducation que vous m’avez enseignée. "
+          "character": "second",
+          "message": "Père, calmez-vous ! Mon œuvre reflète seulement ma propre vision des choses, c’est de cette manière que je perçois l’art. Je ne voulais en aucun cas vous offenser et encore moins remettre en cause l’éducation que vous m’avez inculquée."
         }
       ]
     },
@@ -79,16 +79,16 @@
       "url": "../static/images/jpeg/Background-fusion-art.jpg",
       "dialogs": [
         {
-          "character": "main",
-          "message": "Ecoutez, père. Vous avez votre vision et j’ai la mienne. Je pense que nous devrions trouver d’entente ensemble non ?"
+          "character": "second",
+          "message": "Ecoutez, père. Vous avez votre vision et j’ai la mienne. Je pense que nous devrions trouver un terrain d’entente non ?"
         },
         {
           "character": "main",
-          "message": "Ceci me semble compliqué mais je t’avoue fils que tu m’impressionnes alors, pourquoi pas faire ce dernier tableau ensemble liant les traits réalistes d’un portait et ajoutant ta touche de créativité saugrenue. "
+          "message": "Ceci me semble compliqué mais je t’avoue, fils, que ta sagesse m’impressionne… Dans ce cas, faisons un dernier tableau ensemble, liant les traits réalistes d’un portrait et en ajoutant ta touche de créativité saugrenue. "
         },
         {
-          "character": "main",
-          "message": "Ne sois pas si septique, je vais te montrer que l’on peut allier nos deux styles !"
+          "character": "second",
+          "message": "Ne soyez pas si sceptique, je vais vous montrer que l’on peut allier nos deux styles tout en gardant une technique irréprochable !"
         }
       ]
     },
@@ -97,15 +97,15 @@
       "dialogs": [
         {
           "character": "second",
-          "message": "Regardez notre œuvre, père, n’en n’être-vous pas fier ?"
+          "message": " Regardez notre œuvre, père, n’en n’êtes-vous pas fier ?"
         },
         {
           "character": "main",
-          "message": "Je dois t’avouer, fils, que c’est plutôt réussi ! "
+          "message": "Je dois t’avouer, fils, que c’est plutôt réussi !"
         },
         {
           "character": "second",
-          "message": "Vous voyez ! Vous avez votre vision et j’ai la mienne mais rien ne nous empêche de digresser les règles. Le changement c’est parfois être surpris par ce que l’on imaginait impossible. "
+          "message": "Vous voyez ! Rien ne nous empêche de digresser les règles. Le changement surgit lorsque l'on se laisse surprendre par l'inattendu, donnant naissance à ce que l’on imaginait impossible."
         }
       ]
     }
