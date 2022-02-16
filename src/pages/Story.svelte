@@ -1,8 +1,23 @@
 <script>
   import { onMount } from 'svelte';
   import Vue from '../components/Vue.svelte';
+  import Game from '../components/Game/Game.svelte';
+  import data from '../utils/data.json';
+  import { navigate } from 'svelte-routing';
+  import { characterNames } from '../../store';
 
   let hasBeenScroll = false;
+
+  let actualPartIndex = 0;
+  let actualDialogIndex = 0;
+
+  let actualData;
+  let actualImage;
+  let nextImage;
+  let actualCharacter;
+  let actualAudio;
+  let actualMessage;
+  let isGame;
 
   onMount(() => {
     window.onscroll = () => {
@@ -12,6 +27,128 @@
       }
     };
   });
+
+  const preloadImage = () => {
+    nextImage = data.parts[actualPartIndex + 1].url;
+
+    const img = document.createElement('img');
+    img.src = nextImage;
+  };
+
+  const updateImage = () => {
+    actualImage = data.parts[actualPartIndex].url;
+  };
+
+  const updateDialog = () => {
+    actualData = data.parts[actualPartIndex];
+
+    const dialog = actualData.dialogs[actualDialogIndex];
+    actualCharacter = characterNames[dialog.character];
+    actualMessage = dialog.message;
+    actualAudio = dialog.audio;
+
+    if (actualPartIndex < data.parts.length - 1) {
+      preloadImage();
+    }
+  };
+
+  const checkLastDialog = () => {
+    if (actualDialogIndex === data.parts[actualPartIndex].dialogs.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const checkFirstDialog = () => {
+    if (actualDialogIndex === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const checkClickPosition = (position) => {
+    if (position >= window.innerWidth / 2) {
+      return true;
+    }
+    return false;
+  };
+
+  const next = () => {
+    const isLastDialog = checkLastDialog();
+
+    if (isLastDialog) {
+      if (actualPartIndex !== data.parts.length - 1) {
+        if (data.parts[actualPartIndex + 1].shape) {
+          isGame = true;
+        }
+        actualPartIndex += 1;
+        actualDialogIndex = 0;
+
+        updateImage();
+      } else {
+        navigate('/credit');
+      }
+    } else {
+      actualDialogIndex += 1;
+    }
+  };
+
+  const previous = () => {
+    const isFirstDialog = checkFirstDialog();
+
+    if (isFirstDialog) {
+      if (actualPartIndex !== 0) {
+        if (data.parts[actualPartIndex - 1].shape) {
+          isGame = true;
+        }
+        actualPartIndex -= 1;
+        if (!isGame) {
+          actualDialogIndex = data.parts[actualPartIndex].dialogs.length - 1;
+        }
+
+        updateImage();
+      }
+    } else {
+      actualDialogIndex -= 1;
+    }
+  };
+
+  const handleClick = (e) => {
+    const cursorPosititonX = e.clientX;
+    const isClickRight = checkClickPosition(cursorPosititonX);
+
+    if (isClickRight) {
+      next();
+    } else {
+      previous();
+    }
+
+    if (!isGame) {
+      updateDialog();
+    }
+  };
+
+  const valideGame = () => {
+    actualPartIndex += 1;
+    actualDialogIndex = 0;
+
+    updateImage();
+    updateDialog();
+
+    // Parce que le handleClick se déclenche aussi --> doublon dans l'update des variables
+    setTimeout(() => {
+      isGame = false;
+    }, 100);
+  };
+
+  const init = () => {
+    updateDialog();
+    updateImage();
+  };
+
+  init();
 </script>
 
 <main>
@@ -29,8 +166,19 @@
     </div>
   {/if}
 
-  <div class="vue__container">
-    <Vue isReady={hasBeenScroll} />
+  <div on:click={hasBeenScroll && !isGame && handleClick} class="vue__container">
+    {#if isGame}
+      <Game onValidate={valideGame} shape={data.parts[actualPartIndex].shape} />
+    {:else}
+      <Vue
+        isReady={hasBeenScroll}
+        {actualMessage}
+        {actualAudio}
+        {actualImage}
+        {actualCharacter}
+        {actualData}
+      />
+    {/if}
   </div>
 </main>
 
@@ -39,8 +187,6 @@
 
   main {
     height: 100%;
-    // overflow-y: scroll;
-    // scroll-snap-type: y mandatory;
 
     .story__container {
       display: flex;
@@ -49,7 +195,6 @@
       padding: 0 10px 24px 10px;
       height: 100%;
       background: url('/static/texture/texture-1.jpg');
-      // scroll-snap-align: start;
 
       .scroll {
         display: flex;
@@ -80,7 +225,7 @@
 
     .vue__container {
       background: url('/static/texture/texture-1.jpg');
-      // scroll-snap-align: start;
+      height: 100vh;
     }
   }
 </style>

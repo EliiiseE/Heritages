@@ -14,7 +14,9 @@
     <p class="error__subtitle">Page non trouvée</p>
   </div>
 
-  <Button onClick={handleClick} text="Retour à l’accueil" />
+  <div class="button__container">
+    <Button onClick={handleClick} text="Retour à l’accueil" />
+  </div>
 
   <Title />
 </div>
@@ -42,5 +44,12 @@
       font-size: 1.6rem;
       text-transform: uppercase;
     }
+  }
+
+  .button__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 </style>

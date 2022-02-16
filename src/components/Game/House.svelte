@@ -1,8 +1,9 @@
 <script>
+  export let onValidate;
 </script>
 
 <div>
-  <p>Dot</p>
+  <p>House</p>
 </div>
 
 <style lang="scss">

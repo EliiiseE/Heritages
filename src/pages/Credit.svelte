@@ -11,7 +11,9 @@
   <div class="endExperience">
     <p class="endExperience__text">Experience terminée</p>
 
-    <Button onClick={handleClick} text="Recommencer l'expérience" />
+    <div class="button__container">
+      <Button onClick={handleClick} text="Recommencer l'expérience" />
+    </div>
 
     <div class="bottom-page">
       <p class="bottom-page__grateful">Merci !</p>
@@ -104,5 +106,12 @@
         }
       }
     }
+  }
+
+  .button__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 </style>

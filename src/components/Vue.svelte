@@ -1,120 +1,15 @@
 <script>
-  import data from '../utils/data.json';
   import { characterNames, showTextAnimation } from '../../store';
-  import { navigate } from 'svelte-routing';
 
   export let isReady;
-
-  let actualPartIndex = 0;
-  let actualDialogIndex = 0;
-
-  let actualData;
-  let actualImage;
-  let nextImage;
-  let actualCharacter;
-  let actualAudio;
-  let actualMessage;
-
-  const preloadImage = () => {
-    nextImage = data.parts[actualPartIndex + 1].url;
-
-    const img = document.createElement('img');
-    img.src = nextImage;
-  };
-
-  const updateImage = () => {
-    actualImage = data.parts[actualPartIndex].url;
-  };
-
-  const updateDialog = () => {
-    actualData = data.parts[actualPartIndex];
-
-    const dialog = actualData.dialogs[actualDialogIndex];
-    actualCharacter = characterNames[dialog.character];
-    actualMessage = dialog.message;
-    actualAudio = dialog.audio;
-
-    if (actualPartIndex < data.parts.length - 1) {
-      preloadImage();
-    }
-  };
-
-  const checkLastDialog = () => {
-    if (actualDialogIndex === data.parts[actualPartIndex].dialogs.length - 1) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const checkFirstDialog = () => {
-    if (actualDialogIndex === 0) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const checkClickPosition = (position) => {
-    if (position >= window.innerWidth / 2) {
-      return true;
-    }
-    return false;
-  };
-
-  const next = () => {
-    const isLastDialog = checkLastDialog();
-
-    if (isLastDialog) {
-      if (actualPartIndex !== data.parts.length - 1) {
-        actualPartIndex += 1;
-        actualDialogIndex = 0;
-
-        updateImage();
-      } else {
-        navigate('/credit');
-      }
-    } else {
-      actualDialogIndex += 1;
-    }
-  };
-
-  const previous = () => {
-    const isFirstDialog = checkFirstDialog();
-
-    if (isFirstDialog) {
-      if (actualPartIndex !== 0) {
-        actualPartIndex -= 1;
-        actualDialogIndex = data.parts[actualPartIndex].dialogs.length - 1;
-
-        updateImage();
-      }
-    } else {
-      actualDialogIndex -= 1;
-    }
-  };
-
-  const handleClick = (e) => {
-    const cursorPosititonX = e.clientX;
-    const isClickRight = checkClickPosition(cursorPosititonX);
-
-    if (isClickRight) {
-      next();
-    } else {
-      previous();
-    }
-    updateDialog();
-  };
-
-  const init = () => {
-    updateDialog();
-    updateImage();
-  };
-
-  init();
+  export let actualMessage;
+  export let actualAudio;
+  export let actualCharacter;
+  export let actualData;
+  export let actualImage;
 </script>
 
-<div on:click={isReady && handleClick} class="container">
+<div class="container">
   {#if actualData.date}
     <p class="date">{actualData.date}</p>
   {/if}
@@ -123,18 +18,23 @@
       <audio autoplay src={actualAudio} />
     {/if}
     {#key actualMessage}
-    <div class={`textArea ${actualCharacter === characterNames.second ? 'right' : ''}`}>
-      <h4 in:showTextAnimation={{ isLeft: actualCharacter === characterNames.main }}>{actualCharacter}</h4>
-      <div in:showTextAnimation={{ isLeft: actualCharacter === characterNames.main, delay: 400 }} class="textArea__dialogs">
-        <div class="dialog">
-          <span class="left-quote">&ldquo</span>
+      <div class={`textArea ${actualCharacter === characterNames.second ? 'right' : ''}`}>
+        <h4 in:showTextAnimation={{ isLeft: actualCharacter === characterNames.main }}>
+          {actualCharacter}
+        </h4>
+        <div
+          in:showTextAnimation={{ isLeft: actualCharacter === characterNames.main, delay: 400 }}
+          class="textArea__dialogs"
+        >
+          <div class="dialog">
+            <span class="left-quote">&ldquo</span>
             <p>
               {actualMessage}
             </p>
-          <span class="right-quote">&bdquo</span>
+            <span class="right-quote">&bdquo</span>
+          </div>
         </div>
       </div>
-    </div>
     {/key}
   </div>
 </div>

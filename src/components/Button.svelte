@@ -1,9 +1,10 @@
 <script>
   export let onClick;
   export let text;
+  export let isDark;
 </script>
 
-<button class="homepage__btn-start font-italic font-bold" type="button" on:click={onClick}
+<button class={`homepage__btn-start ${isDark ? 'dark' : ''}`} type="button" on:click={onClick}
   >{text}</button
 >
 
@@ -22,6 +23,14 @@
     font-family: $interaction-font;
     color: $primary-color;
 
+    &.dark {
+      color: $dark-color;
+
+      &::after {
+        background-color: $dark-color;
+      }
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -30,13 +39,6 @@
       background-color: $primary-color;
       height: 1px;
       width: 100%;
-    }
-
-    @media all and (max-height: 670px) {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
   }
 </style>

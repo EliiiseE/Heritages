@@ -12,7 +12,9 @@
 
 <div class="homepage__container">
   <Title />
-  <Button onClick={handleClick} text="Lancer l'expérience" />
+  <div class="button__container">
+    <Button onClick={handleClick} text="Lancer l'expérience" />
+  </div>
   <IntroCredits />
 </div>
 
@@ -24,5 +26,12 @@
     padding: 0 10px 24px 10px;
     height: 100%;
     background: url('/static/texture/texture-1.jpg');
+  }
+
+  .button__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 </style>

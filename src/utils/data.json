@@ -21,7 +21,7 @@
       ]
     },
     {
-      "url": "../static/images/jpeg/Portrait_Arriere_GP.jpeg",
+      "url": "../static/images/jpeg/Portrait_GP.jpeg",
       "date": 1802,
       "dialogs": [
         {
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "url": "../static/images/jpeg/Portrait_GP.jpeg",
+      "url": "../static/images/jpeg/Portrait_Arriere_GP.jpeg",
       "date": 1875,
       "dialogs": [
         {
@@ -53,6 +53,11 @@
       ]
     },
     {
+      "url": "../static/texture/texture-1.jpg",
+      "audio": "../static/audio/Frame09.mp3",
+      "shape": "triangle"
+    },
+    {
       "url": "../static/images/jpeg/Portrait_Pere.jpeg",
       "dialogs": [
         {
@@ -66,6 +71,11 @@
           "message": "Maintenant à ton tour, garde toujours ton objectif en tête, c’est de cette manière que tu arriveras à tes fins."
         }
       ]
+    },
+    {
+      "url": "../static/texture/texture-1.jpg",
+      "audio": "../static/audio/Frame13.mp3",
+      "shape": "square"
     },
     {
       "url": "../static/images/jpeg/Portrait_Fils_2.jpeg",
@@ -106,6 +116,11 @@
           "message": "Ne soyez pas si sceptique, je vais vous montrer que l’on peut allier nos deux styles tout en gardant une technique irréprochable !"
         }
       ]
+    },
+    {
+      "url": "../static/texture/texture-1.jpg",
+      "audio": "../static/audio/Frame20.mp3",
+      "shape": "house"
     },
     {
       "url": "../static/images/jpeg/Portrait_Final.jpeg",
