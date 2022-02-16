@@ -5,14 +5,17 @@
       "dialogs": [
         {
           "character": "main",
+          "audio": "../static/audio/Frame03.mp3",
           "message": "Loïs, il est temps de te transmettre notre tradition familiale qui perdure depuis des années. C’est un devoir que chaque génération se doit d’accomplir."
         },
         {
           "character": "second",
+          "audio": "../static/audio/Frame04.mp3",
           "message": "Père, je ne comprends pas qu’entendez-vous par tradition familiale ?"
         },
         {
           "character": "main",
+          "audio": "../static/audio/Frame05.mp3",
           "message": "De génération en génération, chaque père offre une œuvre qu’il a réalisé pour son fils. "
         }
       ]
@@ -23,6 +26,7 @@
       "dialogs": [
         {
           "character": "main",
+          "audio": "../static/audio/Frame06.mp3",
           "message": "Ton arrière grand-père et ton grand-père s’y sont pliés et tu devras faire de même."
         }
       ]
@@ -33,14 +37,17 @@
       "dialogs": [
         {
           "character": "main",
+          "audio": "../static/audio/Frame07.mp3",
           "message": "C’est un symbole de reconnaissance et une manière de te transmettre tout mon savoir pour que tu puisses faire de même quand tu seras père."
         },
         {
           "character": "second",
+          "audio": "../static/audio/Frame08.mp3",
           "message": "Très bien père, je vous écoute attentivement, par quoi dois-je commencer ?"
         },
         {
           "character": "main",
+          "audio": "../static/audio/Frame09.mp3",
           "message": "Il n’y a pas d’art si tu choisis d’idéaliser la réalité. Tu dois absolument la représenter de manière objective, telle que nous la voyons. "
         }
       ]
@@ -50,10 +57,12 @@
       "dialogs": [
         {
           "character": "main",
+          "audio": "../static/audio/Frame11.mp3",
           "message": "Mon fils, voici l'œuvre que je t’ai peinte, tu remarqueras que j’ai choisi de représenter la réalité de la façon la plus franche possible et sans idéaliser le sujet."
         },
         {
           "character": "main",
+          "audio": "../static/audio/Frame12.mp3",
           "message": "Maintenant à ton tour, garde toujours ton objectif en tête, c’est de cette manière que tu arriveras à tes fins."
         }
       ]
@@ -63,14 +72,17 @@
       "dialogs": [
         {
           "character": "second",
+          "audio": "../static/audio/Frame14B.mp3",
           "message": "Pour moi, la peinture c’est représenter des émotions, laisser exprimer ce que l’on a envie d’extérioriser. Je vous laisse découvrir ce que j’ai peint père, j’espère que vous serez surpris par mon audace et … "
         },
         {
           "character": "main",
+          "audio": "../static/audio/Frame15.mp3",
           "message": "Mais quelle honte ! Ce n’est pas de l’art ! Je t’ai appris et transmis toutes mes connaissances et mon savoir-faire... et tu me proposes une grossièreté pareille ! Rien ne me convient, tout est géométrique et les proportions ne sont même pas respectées ! "
         },
         {
           "character": "second",
+          "audio": "../static/audio/Frame16.mp3",
           "message": "Père, calmez-vous ! Mon œuvre reflète seulement ma propre vision des choses, c’est de cette manière que je perçois l’art. Je ne voulais en aucun cas vous offenser et encore moins remettre en cause l’éducation que vous m’avez inculquée."
         }
       ]
@@ -80,14 +92,17 @@
       "dialogs": [
         {
           "character": "second",
+          "audio": "../static/audio/Frame17.mp3",
           "message": "Ecoutez, père. Vous avez votre vision et j’ai la mienne. Je pense que nous devrions trouver un terrain d’entente non ?"
         },
         {
           "character": "main",
+          "audio": "../static/audio/Frame18.mp3",
           "message": "Ceci me semble compliqué mais je t’avoue, fils, que ta sagesse m’impressionne… Dans ce cas, faisons un dernier tableau ensemble, liant les traits réalistes d’un portrait et en ajoutant ta touche de créativité saugrenue. "
         },
         {
           "character": "second",
+          "audio": "../static/audio/Frame19.mp3",
           "message": "Ne soyez pas si sceptique, je vais vous montrer que l’on peut allier nos deux styles tout en gardant une technique irréprochable !"
         }
       ]
@@ -97,14 +112,17 @@
       "dialogs": [
         {
           "character": "second",
+          "audio": "../static/audio/Frame21.mp3",
           "message": " Regardez notre œuvre, père, n’en n’êtes-vous pas fier ?"
         },
         {
           "character": "main",
+          "audio": "../static/audio/Frame22.mp3",
           "message": "Je dois t’avouer, fils, que c’est plutôt réussi !"
         },
         {
           "character": "second",
+          "audio": "../static/audio/Frame23.mp3",
           "message": "Vous voyez ! Rien ne nous empêche de digresser les règles. Le changement surgit lorsque l'on se laisse surprendre par l'inattendu, donnant naissance à ce que l’on imaginait impossible."
         }
       ]

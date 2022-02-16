@@ -6,11 +6,13 @@
   
   let actualPartIndex = 0;
   let actualDialogIndex = 0;
+  // let actualAudioIndex = 0;
 
   let actualData;
   let actualImage;
   let nextImage;
   let actualCharacter;
+  let actualAudio;
   let actualMessage;
 
   const updateImage = () => {
@@ -20,14 +22,17 @@
   
   const updateDialog = () => {
     actualData = data.parts[actualPartIndex];
-    nextImage = data.parts[actualPartIndex+1].url;
-    
-    let img = document.createElement('img');
-    img.src = nextImage
+    // nextImage = data.parts[actualPartIndex+1].url;
+
+    // //preload images
+    // let img = document.createElement('img');
+    // img.src = nextImage
 
     const dialog = actualData.dialogs[actualDialogIndex];
     actualCharacter = characterNames[dialog.character];
     actualMessage = dialog.message;
+    actualAudio = dialog.audio;
+    console.log(actualAudio)
   };
 
   const checkLastDialog = () => {
@@ -66,6 +71,12 @@
         navigate('/credit');
       }
     } else {
+      // nextImage = data.parts[actualPartIndex+1].url;
+
+      // //preload images
+      // let img = document.createElement('img');
+      // img.src = nextImage
+
       actualDialogIndex += 1;
     }
   };
@@ -94,7 +105,6 @@
     } else {
       previous();
     }
-
     updateDialog();
   };
 
@@ -112,6 +122,7 @@
     <p class="date">{actualData.date}</p>
   {/if}
   <div class="textArea__container" style={`background-image: url(${actualImage});`}>
+    <audio autoplay src={actualAudio}></audio>
     <div class={`textArea ${actualCharacter === characterNames.second ? 'right' : ''}`}>
       <h4>{actualCharacter}</h4>
       <div class="textArea__dialogs">
