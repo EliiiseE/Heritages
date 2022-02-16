@@ -1,27 +1,27 @@
-@font-face {
-    font-family: "Iowan Old Style";
-    src: url("fonts/2131-font.woff");
+  @font-face {
+    font-family: "IowanOldSt BT";
+    src: url("/fonts/2131-font.woff") format("woff");
   }
 
   @font-face {
-    font-family: "SnellRoundHand";
-    src: url("fonts/SnellBT-Bold.woff");
+    font-family: "Snell RoundHand";
+    src: url("/fonts/SnellBT-Bold.woff") format("woff");
     weight: 700;
   }
 
   @font-face {
-    font-family: "SnellRoundHand";
-    src: url("fonts/SnellBT-Regular.woff");
+    font-family: "Snell RoundHand";
+    src: url("/fonts/SnellBT-Regular.woff") format("woff");
     weight: 400;
   }
 
   @font-face {
-    font-family: "SnellRoundHand";
-    src: url("fonts/SnellRoundhand-BlackScript.woff");
+    font-family: "Snell RoundHand";
+    src: url("/fonts/SnellRoundhand-BlackScript.woff") format("woff");
     weight: 900;
   }
   @font-face {
-    font-family: "SnellRoundHand";
-    src: url("fonts/SnellRoundhand-BoldScript.woff");
+    font-family: "Snell RoundHand";
+    src: url("/fonts/SnellRoundhand-BoldScript.woff") format("woff");
     weight: 800;
   }

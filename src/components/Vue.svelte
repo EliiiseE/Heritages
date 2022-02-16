@@ -2,21 +2,31 @@
   import data from '../utils/data.json';
   import { characterNames } from '../../store';
   import { navigate } from 'svelte-routing';
-
+  
+  
   let actualPartIndex = 0;
   let actualDialogIndex = 0;
 
   let actualData;
   let actualImage;
+  let nextImage;
   let actualCharacter;
   let actualMessage;
 
   const updateImage = () => {
     actualImage = data.parts[actualPartIndex].url;
-  };
+  };  
 
+  
   const updateDialog = () => {
     actualData = data.parts[actualPartIndex];
+    nextImage = data.parts[actualPartIndex+1].url;
+    
+    // let img = createElement('img');
+    // img.src = nextImage
+    // img.load();
+
+    // console.log(nextImage)
 
     const dialog = actualData.dialogs[actualDialogIndex];
     actualCharacter = characterNames[dialog.character];
@@ -97,6 +107,7 @@
   };
 
   init();
+
 </script>
 
 <div on:click={handleClick} class="container">
