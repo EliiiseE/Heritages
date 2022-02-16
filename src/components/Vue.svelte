@@ -1,12 +1,12 @@
 <script>
   import data from '../utils/data.json';
-  import { characterNames } from '../../store';
+  import { characterNames, showTextAnimation } from '../../store';
   import { navigate } from 'svelte-routing';
-  
-  
+
+  export let isReady;
+
   let actualPartIndex = 0;
   let actualDialogIndex = 0;
-  // let actualAudioIndex = 0;
 
   let actualData;
   let actualImage;
@@ -15,24 +15,28 @@
   let actualAudio;
   let actualMessage;
 
+  const preloadImage = () => {
+    nextImage = data.parts[actualPartIndex + 1].url;
+
+    const img = document.createElement('img');
+    img.src = nextImage;
+  };
+
   const updateImage = () => {
     actualImage = data.parts[actualPartIndex].url;
-  };  
+  };
 
-  
   const updateDialog = () => {
     actualData = data.parts[actualPartIndex];
-    // nextImage = data.parts[actualPartIndex+1].url;
-
-    // //preload images
-    // let img = document.createElement('img');
-    // img.src = nextImage
 
     const dialog = actualData.dialogs[actualDialogIndex];
     actualCharacter = characterNames[dialog.character];
     actualMessage = dialog.message;
     actualAudio = dialog.audio;
-    console.log(actualAudio)
+
+    if (actualPartIndex < data.parts.length - 1) {
+      preloadImage();
+    }
   };
 
   const checkLastDialog = () => {
@@ -71,12 +75,6 @@
         navigate('/credit');
       }
     } else {
-      // nextImage = data.parts[actualPartIndex+1].url;
-
-      // //preload images
-      // let img = document.createElement('img');
-      // img.src = nextImage
-
       actualDialogIndex += 1;
     }
   };
@@ -114,25 +112,30 @@
   };
 
   init();
-
 </script>
 
-<div on:click={handleClick} class="container">
+<div on:click={isReady && handleClick} class="container">
   {#if actualData.date}
     <p class="date">{actualData.date}</p>
   {/if}
   <div class="textArea__container" style={`background-image: url(${actualImage});`}>
-    <audio autoplay src={actualAudio}></audio>
+    {#if isReady}
+      <audio autoplay src={actualAudio} />
+    {/if}
+    {#key actualMessage}
     <div class={`textArea ${actualCharacter === characterNames.second ? 'right' : ''}`}>
-      <h4>{actualCharacter}</h4>
-      <div class="textArea__dialogs">
+      <h4 in:showTextAnimation={{ isLeft: actualCharacter === characterNames.main }}>{actualCharacter}</h4>
+      <div in:showTextAnimation={{ isLeft: actualCharacter === characterNames.main, delay: 400 }} class="textArea__dialogs">
         <div class="dialog">
           <span class="left-quote">&ldquo</span>
-          <p>{actualMessage}</p>
+            <p>
+              {actualMessage}
+            </p>
           <span class="right-quote">&bdquo</span>
         </div>
       </div>
     </div>
+    {/key}
   </div>
 </div>
 
@@ -141,6 +144,7 @@
 
   .container {
     position: relative;
+    overflow-x: hidden;
 
     .date {
       position: absolute;

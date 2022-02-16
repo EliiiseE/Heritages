@@ -30,7 +30,7 @@
   {/if}
 
   <div class="vue__container">
-    <Vue />
+    <Vue isReady={hasBeenScroll} />
   </div>
 </main>
 
