@@ -28,7 +28,7 @@
     };
 
     let audio = document.getElementById("soundtrack");
-    audio.volume = 0.6;
+    audio.volume = 0.5;
   });
 
   const preloadImage = () => {
@@ -162,7 +162,7 @@
     <div class="story__container">
       <div class="scroll">
         <p>Scroll pour continuer</p>
-        <img src="../static/images/arrow-b.svg" alt="" />
+        <img class="rotate" src="../static/images/arrow-b.svg" alt="" />
       </div>
       <img
         class="title"
@@ -202,6 +202,9 @@
       height: 100%;
       background: url('/static/texture/texture-1.jpg');
 
+      .rotate{
+        transform: rotate(180deg);
+      }
       .scroll {
         display: flex;
         flex-direction: column;
