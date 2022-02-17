@@ -54,8 +54,11 @@
     },
     {
       "url": "../static/texture/texture-1.jpg",
-      "audio": "../static/audio/Frame09.mp3",
-      "shape": "triangle"
+      "shape": "triangle",
+      "dialogs": [
+        {
+          "audio": "../static/audio/Frame10.mp3"
+        }]
     },
     {
       "url": "../static/images/jpeg/Portrait_Pere.jpeg",
@@ -74,8 +77,11 @@
     },
     {
       "url": "../static/texture/texture-1.jpg",
-      "audio": "../static/audio/Frame13.mp3",
-      "shape": "square"
+      "shape": "square",
+      "dialogs": [
+        {
+          "audio": "../static/audio/Frame13.mp3"
+        }]
     },
     {
       "url": "../static/images/jpeg/Portrait_Fils_2.jpeg",
@@ -119,8 +125,11 @@
     },
     {
       "url": "../static/texture/texture-1.jpg",
-      "audio": "../static/audio/Frame20.mp3",
-      "shape": "house"
+      "shape": "house",
+      "dialogs": [
+        {
+          "audio": "../static/audio/Frame20.mp3"
+        }]
     },
     {
       "url": "../static/images/jpeg/Portrait_Final.jpeg",

@@ -11,6 +11,7 @@
 <div>
   <p class="instruction">Relie les points pour continuer</p>
 
+
   {#if shape === 'triangle'}
     <Triangle onValidate={onValidate} />
   {:else if shape === 'square'}

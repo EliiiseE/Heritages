@@ -26,6 +26,9 @@
         hasBeenScroll = true;
       }
     };
+
+    let audio = document.getElementById("soundtrack");
+    audio.volume = 0.6;
   });
 
   const preloadImage = () => {
@@ -148,10 +151,13 @@
     updateImage();
   };
 
+ 
+
   init();
 </script>
 
 <main>
+  <audio id="soundtrack" autoplay src="/static/audio/soundtrack.mp3"/>
   {#if !hasBeenScroll}
     <div class="story__container">
       <div class="scroll">

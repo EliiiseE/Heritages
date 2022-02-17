@@ -9,6 +9,7 @@
 
 <footer>
   <div class="endExperience">
+    <audio id="myaudio" autoplay src="/static/audio/soundtrack.mp3"/>
     <p class="endExperience__text">Experience terminée</p>
 
     <div class="button__container">
