@@ -16,3 +16,15 @@ export const showTextAnimation = (node, params) => {
     `,
   };
 };
+
+export const zoomImage = (node, params) => {
+  if (params.isZoomed) return;
+  return {
+    delay: params.delay || 0,
+    duration: params.duration || 800,
+    easing: params.easing || cubicOut,
+    css: (t, u) => `
+      transform: scale(${t * (1 - 0.9) + 0.9});
+    `,
+  };
+};

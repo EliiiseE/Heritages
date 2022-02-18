@@ -6,33 +6,46 @@
 
   export let onValidate;
   export let shape;
+
+  let isGameWin;
+
+  const handleGameWin = () => {
+    isGameWin = true;
+  };
 </script>
 
 <div>
-  <p class="instruction">Relie les points pour continuer</p>
-
+  <p class="instruction">Touche les points pour continuer</p>
 
   {#if shape === 'triangle'}
-    <Triangle onValidate={onValidate} />
+    <Triangle {handleGameWin} />
   {:else if shape === 'square'}
-    <Square onValidate={onValidate} />
+    <Square {handleGameWin} />
   {:else if shape === 'house'}
-    <House onValidate={onValidate}/>
+    <House {handleGameWin} />
   {/if}
 
+  {#if isGameWin}
   <div class="button__container">
-    <Button onClick={onValidate} text="Valider" isDark={false} />
+    <Button onClick={onValidate} text="Valider" isDark={true} />
   </div>
+  {/if}
 </div>
 
 <style lang="scss">
   @import '../../var';
 
   .instruction {
-    font-size: 1.6rem;
+    position: absolute;
+    top: 11rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
     font-family: $interaction-font;
     font-weight: 900;
-    color: $primary-color;
+    color: $dark-color;
   }
 
   .button__container {

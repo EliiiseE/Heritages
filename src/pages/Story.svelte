@@ -4,7 +4,7 @@
   import Game from '../components/Game/Game.svelte';
   import data from '../utils/data.json';
   import { navigate } from 'svelte-routing';
-  import { characterNames } from '../../store';
+  import { characterNames, zoomImage } from '../../store';
 
   let hasBeenScroll = false;
 
@@ -18,6 +18,7 @@
   let actualAudio;
   let actualMessage;
   let isGame;
+  let isPulsing;
 
   onMount(() => {
     window.onscroll = () => {
@@ -26,9 +27,6 @@
         hasBeenScroll = true;
       }
     };
-
-    let audio = document.getElementById("soundtrack");
-    audio.volume = 0.5;
   });
 
   const preloadImage = () => {
@@ -122,6 +120,8 @@
     const cursorPosititonX = e.clientX;
     const isClickRight = checkClickPosition(cursorPosititonX);
 
+    isPulsing = false;
+
     if (isClickRight) {
       next();
     } else {
@@ -137,6 +137,8 @@
     actualPartIndex += 1;
     actualDialogIndex = 0;
 
+    isPulsing = false;
+
     updateImage();
     updateDialog();
 
@@ -146,18 +148,19 @@
     }, 100);
   };
 
+  const handleAudioEnded = () => {
+    isPulsing = true;
+  };
+
   const init = () => {
     updateDialog();
     updateImage();
   };
 
- 
-
   init();
 </script>
 
 <main>
-  <audio id="soundtrack" autoplay src="/static/audio/soundtrack.mp3"/>
   {#if !hasBeenScroll}
     <div class="story__container">
       <div class="scroll">
@@ -173,17 +176,21 @@
   {/if}
 
   <div on:click={hasBeenScroll && !isGame && handleClick} class="vue__container">
+    {#key actualImage}
+      <div
+        in:zoomImage={{ isZoomed: data.parts[actualPartIndex].shape }}
+        class="background"
+        style={`background-image: url(${actualImage});`}
+      />
+    {/key}
+
+    {#if hasBeenScroll}
+      <audio autoplay src={actualAudio} id="audio" on:ended={handleAudioEnded} />
+    {/if}
     {#if isGame}
       <Game onValidate={valideGame} shape={data.parts[actualPartIndex].shape} />
     {:else}
-      <Vue
-        isReady={hasBeenScroll}
-        {actualMessage}
-        {actualAudio}
-        {actualImage}
-        {actualCharacter}
-        {actualData}
-      />
+      <Vue {actualMessage} {actualAudio} {actualCharacter} {actualData} {isPulsing} />
     {/if}
   </div>
 </main>
@@ -202,7 +209,7 @@
       height: 100%;
       background: url('/static/texture/texture-1.jpg');
 
-      .rotate{
+      .rotate {
         transform: rotate(180deg);
       }
       .scroll {
@@ -235,6 +242,20 @@
     .vue__container {
       background: url('/static/texture/texture-1.jpg');
       height: 100vh;
+
+      position: relative;
+      z-index: 1;
+
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: 35% 55%;
+        background-repeat: no-repeat;
+      }
     }
   }
 </style>

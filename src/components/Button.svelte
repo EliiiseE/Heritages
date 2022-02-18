@@ -4,8 +4,10 @@
   export let isDark;
 </script>
 
-<button class={`homepage__btn-start ${isDark ? 'dark' : ''}`} type="button" on:click={onClick}
-  >{text}</button
+<button
+  class={`homepage__btn-start ${isDark ? 'dark' : ''}`}
+  type="button"
+  on:click={onClick}>{text}</button
 >
 
 <style lang="scss">

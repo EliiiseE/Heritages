@@ -7,10 +7,17 @@
   import Story from './pages/Story.svelte';
 
   export let url = '';
+
+  const startAudio = () => {
+    const audio = new Audio('static/audio/soundtrack.mp3');
+    audio.volume = 0.5;
+    audio.loop = true;
+    audio.play();
+  };
 </script>
 
 <Router {url}>
-  <Route path="/" component={Home} />
+  <Route path="/"><Home onClick={startAudio} /></Route>
   <Route path="credit" component={Credit} />
   <Route path="instruction" component={Instruction} />
   <Route path="story" component={Story} />

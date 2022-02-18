@@ -2,10 +2,12 @@
   import Title from '../components/Title.svelte';
   import Button from '../components/Button.svelte';
   import IntroCredits from '../components/IntroCredits.svelte';
-
   import { navigate } from 'svelte-routing';
 
+  export let onClick;
+
   const handleClick = () => {
+    onClick();
     navigate('/instruction');
   };
 </script>

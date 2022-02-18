@@ -1,22 +1,18 @@
 <script>
   import { characterNames, showTextAnimation } from '../../store';
 
-  export let isReady;
   export let actualMessage;
   export let actualAudio;
   export let actualCharacter;
   export let actualData;
-  export let actualImage;
+  export let isPulsing;
 </script>
 
 <div class="container">
   {#if actualData.date}
     <p class="date">{actualData.date}</p>
   {/if}
-  <div class="textArea__container" style={`background-image: url(${actualImage});`}>
-    {#if isReady}
-      <audio autoplay src={actualAudio} />
-    {/if}
+  <div class="textArea__container">
     {#key actualMessage}
       <div class={`textArea ${actualCharacter === characterNames.second ? 'right' : ''}`}>
         <h4 in:showTextAnimation={{ isLeft: actualCharacter === characterNames.main }}>
@@ -36,6 +32,10 @@
         </div>
       </div>
     {/key}
+
+    {#if isPulsing}
+      <div class="pulse" />
+    {/if}
   </div>
 </div>
 
@@ -60,12 +60,7 @@
   }
 
   .textArea__container {
-    background-size: cover;
-    background-position: 35% 55%;
-    background-repeat: no-repeat;
     height: 100vh;
-    position: relative;
-    z-index: 1;
 
     &:after {
       content: '';
@@ -144,6 +139,36 @@
           }
         }
       }
+    }
+  }
+
+  .pulse {
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    background: rgba($primary-color, 0.5);
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    box-shadow: 0 0 0 0 rgba($primary-color, 1);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: translateY(-50%) scale(0.95);
+      box-shadow: 0 0 0 0 rgba($primary-color, 0.7);
+    }
+
+    70% {
+      transform: translateY(-50%) scale(1);
+      box-shadow: 0 0 0 3rem rgba($primary-color, 0);
+    }
+
+    100% {
+      transform: translateY(-50%) scale(0.95);
+      box-shadow: 0 0 0 0 rgba($primary-color, 0);
     }
   }
 </style>
