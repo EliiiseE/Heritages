@@ -32,7 +32,7 @@
       ]
     },
     {
-      "url": "../static/images/jpeg/arriere-gp.jpeg",
+      "url": "../static/images/jpeg/Portrait_Arriere_GP.jpeg",
       "date": 1875,
       "dialogs": [
         {
@@ -58,7 +58,7 @@
       "audio": "../static/audio/Frame10.mp3"
     },
     {
-      "url": "../static/images/jpeg/pere.jpeg",
+      "url": "../static/images/jpeg/Portrait_Pere.jpeg",
       "dialogs": [
         {
           "character": "main",
