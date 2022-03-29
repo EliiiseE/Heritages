@@ -147,8 +147,8 @@
     .point {
       z-index: 20;
       position: absolute;
-      height: 14px;
-      width: 14px;
+      height: 20px;
+      width: 20px;
       border: 1px solid $dark-color;
       border-radius: 50%;
       pointer-events: none;

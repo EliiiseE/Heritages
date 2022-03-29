@@ -159,8 +159,8 @@
     &__point {
       z-index: 20;
       position: absolute;
-      height: 14px;
-      width: 14px;
+      height: 20px;
+      width: 20px;
       border: 1px solid $dark-color;
       border-radius: 50%;
       pointer-events: none;
@@ -218,7 +218,7 @@
     }
 
     #second-house-line {
-      top: 25vw;
+      top: 24vw;
       left: 24vw;
       transform: translate(-15%, -35vw) rotate(47deg);
     }
@@ -251,7 +251,7 @@
     #third-house-line,
     #fourth-house-line,
     #fifth-house-line {
-      width: 48vw;
+      width: 49vw;
     }
 
     .point--fill {

@@ -138,8 +138,8 @@
     &__point {
       z-index: 20;
       position: absolute;
-      height: 14px;
-      width: 14px;
+      height: 20px;
+      width: 20px;
       border: 1px solid $dark-color;
       border-radius: 50%;
       pointer-events: none;
@@ -189,7 +189,7 @@
     }
 
     #first-square-line {
-      top: 1.5625vw;
+      top: 2.5625vw;
     }
 
     #second-square-line {
@@ -206,11 +206,11 @@
     }
 
     #third-square-line {
-      bottom: 1.5625vw;
+      bottom: 2.5625vw;
     }
 
     #fourth-square-line {
-      left: -22.4vw;
+      left: -21.4vw;
       top: 25vw;
       transform: rotate(-90deg);
     }
